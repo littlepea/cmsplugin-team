@@ -1,33 +1,20 @@
 =====================
-Django CMS empty plugin template
+Django CMS team plugin
 =====================
 
-django-cms plugin template to quickly create your own custom plugins.
+Django CMS plugin to list team members/employees.
 
-Usage
+Installation
 ------------
 
-1. Clone the template into your custom directory::
+1. Install with pip::
 
-    git clone https://github.com/littlepea/cmsplugin-empty-template.git cmsplugin_your_plugin
+    pip install cmsplugin-team
 
-2. Change Git origin to your repository::
+2. Add `filer` and `cmsplugin_team` to your INSTALLED_APPS in `settings.py`::
 
-    cd cmsplugin_your_plugin
-    git remote rm origin
-    git remote add origin https://github.com/yourname/cmsplugin-your-plugin.git
-    git push -u origin master
-
-3. Change `cmsplugin_` directory to your app name::
-
-    mv cmsplugin_ cmsplugin_your_plugin
-
-4. Change `cmsplugin_` to your app name in `setup.py` and `MANIFEST.in`::
-
-5. Change `templates` directories.
-
-6. Change `__init__.py` to set TEMPLATES_SETTING_NAME and TEMPLATES_DIR_NAME if you want to use `autodiscover_templates()` functionality, otherwise just delete `TEMPLATE_CHOICES`, `template` field and `utils.py` from `models.py`.
-
-5. Add your custom code to `models.py` and `cms_plugins.py`, follow `django-cms docs`_ to add your custom plugin code.
-
-.. _django-cms docs: http://docs.django-cms.org/en/develop/extending_cms/custom_plugins.html
+    INSTALLED_APPS = (
+        ...
+        'filer',
+        'cmsplugin_team',
+    )

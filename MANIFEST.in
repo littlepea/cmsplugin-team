@@ -1,7 +1,7 @@
 include README.rst
 include MANIFEST.in
-recursive-include cmsplugin_/fixtures *
-recursive-include cmsplugin_/bin *
-recursive-include cmsplugin_/locale *.po
-recursive-include cmsplugin_/static *
-recursive-include cmsplugin_/templates *
+recursive-include cmsplugin_team/fixtures *
+recursive-include cmsplugin_team/bin *
+recursive-include cmsplugin_team/locale *.po
+recursive-include cmsplugin_team/static *
+recursive-include cmsplugin_team/templates *

@@ -2,7 +2,7 @@ import glob
 import os
 
 from django.conf import settings
-from . import TEMPLATES_SETTING_NAME
+from . import TEMPLATES_SETTING_NAME, TEMPLATES_DIR_NAME
 
 TEMPLATES = tuple()
 
@@ -49,7 +49,7 @@ def autodiscover_templates():
                 dirs_to_scan.append(dir)
 
     for dir in dirs_to_scan:
-        dir_glob = 'cms/plugins/tabs'
+        dir_glob = TEMPLATES_DIR_NAME
         found = glob.glob(os.path.join(dir, '{}/*.html'.format(dir_glob)))
         for file in found:
             dir, file = os.path.split(file)

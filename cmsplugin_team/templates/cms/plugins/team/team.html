@@ -1,0 +1,22 @@
+{% load i18n %}
+
+{% if name %}
+    <h2>{{ name }}</h2>
+{% endif %}
+{% for member in members %}
+    <div>
+        <img src="{{ member.photo.image.url }}" alt="{{ member.name }}"/>
+        <h3>{{ member.name }}</h3>
+        <span>{{ member.position }}</span>
+
+        <ul class="social-icons unstyled pull-right">
+            {% for link in member.social_links.all %}
+                <li><a href="{{ link.url }}" title="{{ link.website }}"><i class="flippa-{{ link.website }}"></i></a></li>
+            {% endfor %}
+        </ul>
+
+        <p>{{ member.summary }}</p>
+    </div>
+{% empty %}
+    <div>{% trans "No members in this team." %}</div>
+{% endfor %}
