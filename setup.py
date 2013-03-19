@@ -20,5 +20,6 @@ setup(
     install_requires = [
         'django-sekizai',
         'django-filer',
+        'django-editor',
     ],
 )

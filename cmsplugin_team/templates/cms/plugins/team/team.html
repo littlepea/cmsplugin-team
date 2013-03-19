@@ -15,7 +15,7 @@
             {% endfor %}
         </ul>
 
-        <p>{{ member.summary }}</p>
+        <p>{{ member.summary|safe }}</p>
     </div>
 {% empty %}
     <div>{% trans "No members in this team." %}</div>

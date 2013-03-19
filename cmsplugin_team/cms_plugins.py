@@ -1,14 +1,16 @@
 from django.contrib import admin
+from django.db import models
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
 from cmsplugin_team.models import TeamPlugin, TeamMember, SocialLink
+from editor.admin import EditorAdmin
 
 
 class SocialLinkInline(admin.TabularInline):
     model = SocialLink
 
 
-class TeamMemberAdmin(admin.ModelAdmin):
+class TeamMemberAdmin(EditorAdmin):
     inlines = [SocialLinkInline]
     list_display = ['name', 'position']
 
