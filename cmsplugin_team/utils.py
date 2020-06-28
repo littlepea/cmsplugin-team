@@ -16,8 +16,7 @@ def autodiscover_templates():
         '''
         Sorts templates
         '''
-        TEMPLATES = sorted(templates, key=lambda template: template[1])
-        return TEMPLATES
+        return sorted(templates, key=lambda template: template[1])
 
     # obviously, cache for better performance
     if TEMPLATES:
